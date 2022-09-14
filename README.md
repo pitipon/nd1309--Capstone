@@ -27,6 +27,29 @@ Run blockchain simulation by this account for testing
 ganache-cli -a 20 -l 9999999 -m "slice congress throw plastic rely coyote margin myself together manage romance actress"
 ```
 
+Run ZoKrates
+* Ref here (https://andresaaap.medium.com/creating-simple-zero-knowledge-verifier-contract-with-zokrates-0-5-0-solidity-0-5-0-13e9d615fe80)
+
+```
+docker run -v /Users/mo/code/class/udacity-blockchain/Homework/Blockchain-Capstone/zokrates/code:/home/zokrates/code -ti zokrates/zokrates:0.5.0 /bin/bash
+```
+
+```
+cd code/square/
+~/zokrates compile -i square.code
+~/zokrates setup
+~/zokrates compute-witness -a 3 9
+~/zokrates generate-proof
+~/zokrates export-verifier
+```
+
+Test
+```
+truffle test
+```
+
+
+
 # Project Resources
 
 * [Remix - Solidity IDE](https://remix.ethereum.org/)
