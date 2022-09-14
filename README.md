@@ -11,6 +11,17 @@ solidity 0.5.1
 
 # Instruction
 
+Install dependencies
+```
+npm install
+```
+
+Compile contract
+```
+cd eth-contracts
+truffle compile
+```
+
 Run blockchain simulation by this account for testing
 ```bash
 ganache-cli -a 20 -l 9999999 -m "slice congress throw plastic rely coyote margin myself together manage romance actress"

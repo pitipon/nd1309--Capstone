@@ -10,7 +10,7 @@ contract Ownable {
 
     
     //  1) create a private '_owner' variable of type address with a public getter function
-    address private _owner;
+    address internal _owner;
 
     // Returns the address of the current owner
     function owner() public view returns (address) {
@@ -73,7 +73,7 @@ contract Pausable is Ownable {
     }
 
     // 4) create 'whenNotPaused' & 'paused' modifier that throws in the appropriate situation
-    modifier notPause() {
+    modifier notPaused() {
         require(!_paused, "Contract is paused");
         _;
     }
