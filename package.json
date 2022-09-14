@@ -14,8 +14,11 @@
     "lite-server": "2.4.0"
   },
   "dependencies": {
-    "openzeppelin-solidity": "^2.2.0",
+    "@truffle/hdwallet-provider": "^1.5.0",
+    "dotenv": "^10.0.0",
+    "openzeppelin-solidity": "2.2.0",
     "solc": "^0.5.2",
-    "solc-js": "^0.5.2"
+    "solc-js": "^0.5.2",
+    "web3": "^1.5.2"
   }
 }
