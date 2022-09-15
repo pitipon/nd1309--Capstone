@@ -22,9 +22,9 @@ const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS
 const contractJson = require('../eth-contracts/build/contracts/SolnSquareVerifier.json')
 
 async function main() {
-    console.log(1111,infuraKey, mnemonic)
+    // console.log(1111,infuraKey, mnemonic)
     // console.log(1111,'env',require('dotenv'))
-    const provider = new HDWalletProvider(mnemonic, `wss://rinkeby.infura.io/v3/${infuraKey}`)
+    const provider = new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${infuraKey}`)
     const web3Instance = new web3(provider)
     const contract = await new web3Instance.eth.Contract(contractJson.abi, CONTRACT_ADDRESS, { gasLimit: "1000000" })
     for (let idx = 0; idx < MINT_COUNT; idx++) {

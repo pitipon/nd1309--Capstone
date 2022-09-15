@@ -858,6 +858,15 @@ Verifier ABI:
 https://github.com/andresaaap/mint-ntf
 
 
+##### Mint.js
+
+* create different proof from zokrates
+* run mint.js
+```
+cd scripts
+node ./mint.js
+```
+
 
 # Project Resources
 
