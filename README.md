@@ -9,7 +9,7 @@ truffle 5.0.2
 solidity 0.5.1
 ```
 
-# Instruction
+# Dev Instruction 
 
 ##### Install dependencies
 ```
@@ -57,6 +57,23 @@ truffle test
 
 ![Test](images/test.png)
 
+# Deploy Instruction
+
+###### .env
+* edit variable in .env.temp to .env
+```
+INFURA_KEY=<your-infura-key>
+SECRET=<your-metamask-12-words-seed>
+OWNER_ADDRESS=<your-metamask-account>
+CONTRACT_ADDRESS=<your-deployed-SolnSquareVerifier-contract-address>
+```
+
+###### Deploy to rinkeby
+```
+cd eth-contracts
+truffle compile
+truffle deploy --network rinkeby
+```
 
 # Project Resources
 
