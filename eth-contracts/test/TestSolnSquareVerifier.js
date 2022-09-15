@@ -13,15 +13,8 @@ contract('SolnSquareVerifier', accounts => {
             let tx = await this.contract.addSolution(
                 accounts[0],
                 1,
-                zokratesProof.proof.A,
-                zokratesProof.proof.A_p,
-                zokratesProof.proof.B,
-                zokratesProof.proof.B_p,
-                zokratesProof.proof.C,
-                zokratesProof.proof.C_p,
-                zokratesProof.proof.H,
-                zokratesProof.proof.K,
-                zokratesProof.input
+                ...Object.values(zokratesProof.proof),
+                zokratesProof.inputs
             );
             let verifiedEvent = tx.logs[0].event;
             let addedEvent = tx.logs[1].event;
@@ -36,15 +29,8 @@ contract('SolnSquareVerifier', accounts => {
                 await this.contract.addSolution(
                     accounts[0],
                     1,
-                    zokratesProof.proof.A,
-                    zokratesProof.proof.A_p,
-                    zokratesProof.proof.B,
-                    zokratesProof.proof.B_p,
-                    zokratesProof.proof.C,
-                    zokratesProof.proof.C_p,
-                    zokratesProof.proof.H,
-                    zokratesProof.proof.K,
-                    zokratesProof.input
+                    ...Object.values(zokratesProof.proof),
+                    zokratesProof.inputs
                 );
                 await this.contract.mint(accounts[0], 1);
             } catch (err) {
