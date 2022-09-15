@@ -880,6 +880,9 @@ https://rinkeby.etherscan.io/address/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d
 // Example
 https://testnets.opensea.io/assets/rinkeby/<asset_contract_address>/<token_id>
 
+// Collection here
+https://testnets.opensea.io/collection/bkk-land-token-v2
+
 // Items
 https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/1
 https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/2
@@ -888,6 +891,20 @@ https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A1
 https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/5
 https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/7
 https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/8
+```
+
+##### Purchase 
+* Ref: https://support.opensea.io/hc/en-us/articles/360063498333-How-do-I-sell-an-NFT-
+* Ref: https://support.opensea.io/hc/en-us/articles/360063518033-How-do-I-buy-fixed-price-NFTs-
+* Purchase address: https://rinkeby.etherscan.io/address/0xBB0dfaFc85C911238A833e637fCb5268A2D09D1f
+
+```
+// Transaction orders
+https://rinkeby.etherscan.io/tx/0x9ddeec3e14c7f792fd9ed0b5868433e8f28f8636a18278be4c3a7dd766a4dcf8
+https://rinkeby.etherscan.io/tx/0xf0dc1c4ee1433df1e1de9472c111d84ba3c896e26e70e465784fd671317cca9f
+https://rinkeby.etherscan.io/tx/0x88eeb79b68c038a020ee6cb3102a5bb1adb27a468c32e8c1b6ece4571c1b89c2
+https://rinkeby.etherscan.io/tx/0x2805629effdda50d7b8651a23794b5a5fd8f20c8de1bc727c7e6c1564fc9b08c
+https://rinkeby.etherscan.io/tx/0x53ebc16c5e285ead56e30c20b4c38a79ce5c06c325d77afc3a1f8a329ed50725
 ```
 
 # Project Resources
