@@ -771,13 +771,13 @@
           }
         ],
         "contractDependencies": [
-          1130,
           211,
+          1130,
           91,
+          165,
           693,
           991,
           1101,
-          165,
           7455,
           8817
         ],
@@ -3251,13 +3251,13 @@
           }
         ],
         "contractDependencies": [
-          1130,
           211,
+          1130,
           91,
+          165,
           693,
           991,
           1101,
-          165,
           7455,
           8817
         ],
@@ -5651,7 +5651,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2022-09-14T06:14:43.587Z",
+  "updatedAt": "2022-09-15T03:06:48.473Z",
   "devdoc": {
     "methods": {
       "isApprovedForAll(address,address)": {
