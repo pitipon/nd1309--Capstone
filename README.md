@@ -854,6 +854,11 @@ Verifier ABI:
 
 ![myetherwallet1](images/myetherwallet1.png)
 
+##### Example of Mint-nft
+https://github.com/andresaaap/mint-ntf
+
+
+
 # Project Resources
 
 * [Remix - Solidity IDE](https://remix.ethereum.org/)
