@@ -26,21 +26,16 @@ contract SolnSquareVerifier is Verifier, MyERC721Token {
     function addSolution(
         address addr,
         uint256 tokenId,
-        uint256[2] memory a,
-        uint256[2] memory a_p,
-        uint256[2][2] memory b,
-        uint256[2] memory b_p,
-        uint256[2] memory c,
-        uint256[2] memory c_p,
-        uint256[2] memory h,
-        uint256[2] memory k,
-        uint256[2] memory input
+        uint[2] memory a, 
+        uint[2][2] memory b, 
+        uint[2] memory c, 
+        uint[2] memory input
     ) public {
         bytes32 key = keccak256(
-            abi.encodePacked(tokenId, addr, a, a_p, b, b_p, c, c_p, h, k, input)
+            abi.encodePacked(a, b, c, input)
         );
         require(!submittedSolutions[key], "The solution has been used before");
-        bool isValid = verifyTx(a, a_p, b, b_p, c, c_p, h, k, input);
+        bool isValid = verifyTx(a, b, c, input);
         require(isValid, "The proof is not valid");
         Solution memory solution = Solution(key, tokenId, addr);
         solutions[tokenId] = solution;

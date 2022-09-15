@@ -36,8 +36,7 @@ Ref here
 * (https://www.altoros.com/blog/zero-knowledge-proof-improving-privacy-for-a-blockchain/)
 
 ```
-// Note: we pick zokrates 0.3.0 that same as assignment example
-docker run -v /Users/mo/code/class/udacity-blockchain/Homework/Blockchain-Capstone/zokrates/code:/home/zokrates/code -ti zokrates/zokrates:0.3.0 /bin/bash
+docker run -v /Users/mo/code/class/udacity-blockchain/Homework/Blockchain-Capstone/zokrates/code:/home/zokrates/code -ti zokrates/zokrates:0.5.0 /bin/bash
 ```
 
 ```
