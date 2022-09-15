@@ -866,7 +866,29 @@ https://github.com/andresaaap/mint-ntf
 cd scripts
 node ./mint.js
 ```
+* Mints record here
+https://rinkeby.etherscan.io/address/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d
+![Mint](images/mint.png)
 
+##### List on opensea
+* Ref: https://docs.opensea.io/docs/3-viewing-your-items-on-opensea
+* Ref: https://docs.opensea.io/docs/4-debugging-your-metadata
+* Ref: https://docs.opensea.io/docs/8-customizing-your-storefront
+
+* Open items on testnet.opensea.io
+```
+// Example
+https://testnets.opensea.io/assets/rinkeby/<asset_contract_address>/<token_id>
+
+// Items
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/1
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/2
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/3
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/4
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/5
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/7
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/8
+```
 
 # Project Resources
 
