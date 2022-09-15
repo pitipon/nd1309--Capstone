@@ -4,9 +4,10 @@ The capstone will build upon the knowledge you have gained in the course in orde
 
 # Version requirement
 ```
-node 15.14.0
-truffle 5.0.2
-solidity 0.5.1
+Truffle v5.3.6 (core: 5.3.6)
+Solidity - 0.5.2 (solc-js)
+Node v15.14.0
+Web3.js v1.3.5
 ```
 
 # Dev Instruction 
@@ -73,6 +74,837 @@ CONTRACT_ADDRESS=<your-deployed-SolnSquareVerifier-contract-address>
 cd eth-contracts
 truffle compile
 truffle deploy --network rinkeby
+// truffle migrate --network rinkeby --skipDryRun
+```
+
+Result of deploy contract
+```bash
+❯ truffle migrate --network rinkeby --skipDryRun
+> Warning: possible unsupported (undocumented in help) command line option: --skipDryRun
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 29999972 (0x1c9c364)
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'Verifier'
+   --------------------
+   > transaction hash:    0xe1dff238a872c537330fc5da6402e8c1f2c2338f6b1aa56acbd0e67ad7f3c6b6
+   > Blocks: 1            Seconds: 12
+   > contract address:    0xc1E460846d177aCC8F342dd141f2e7221e7EfFab
+   > block number:        11385247
+   > block timestamp:     1663254136
+   > account:             0xf124998Fca84a6685C282A74b6F51Fa5E7bf179A
+   > balance:             0.534884889011718369
+   > gas used:            1036924 (0xfd27c)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01036924 ETH
+
+
+   Deploying 'SolnSquareVerifier'
+   ------------------------------
+   > transaction hash:    0x47df158ffde20543aff0c23b03594ab90fc15acacb1f8091141c87e9706de5b1
+   > Blocks: 1            Seconds: 9
+   > contract address:    0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d
+   > block number:        11385248
+   > block timestamp:     1663254151
+   > account:             0xf124998Fca84a6685C282A74b6F51Fa5E7bf179A
+   > balance:             0.492759539011718369
+   > gas used:            4212535 (0x404737)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.04212535 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.05249459 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.05249459 ETH
+```
+![Deploy to rinkeby](images/contract.png)
+
+| Contract | Address |
+|---|---|
+| *Migration* | [0x2d75f4bbb85df2cd54c6f7ce48c462d09cb33390](https://rinkeby.etherscan.io/address/0x2d75f4bbb85df2cd54c6f7ce48c462d09cb33390)
+|  *Verifier* | [0xB3a8420892EF98E6815A512584628c5453577738](https://rinkeby.etherscan.io/address/0xc1E460846d177aCC8F342dd141f2e7221e7EfFab) |
+|  *SolnSquareVerifier* | [0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d](https://rinkeby.etherscan.io/address/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d) |
+
+
+SolnSquareVerifier contract ABI:
+```
+"abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "interfaceId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "supportsInterface",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getApproved",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_myid",
+          "type": "bytes32"
+        },
+        {
+          "name": "_result",
+          "type": "string"
+        }
+      ],
+      "name": "__callback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenOfOwnerByIndex",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_myid",
+          "type": "bytes32"
+        },
+        {
+          "name": "_result",
+          "type": "string"
+        },
+        {
+          "name": "_proof",
+          "type": "bytes"
+        }
+      ],
+      "name": "__callback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "safeTransferFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenByIndex",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "uint256[2]"
+        },
+        {
+          "name": "b",
+          "type": "uint256[2][2]"
+        },
+        {
+          "name": "c",
+          "type": "uint256[2]"
+        },
+        {
+          "name": "input",
+          "type": "uint256[2]"
+        }
+      ],
+      "name": "verifyTx",
+      "outputs": [
+        {
+          "name": "r",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ownerOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "approved",
+          "type": "bool"
+        }
+      ],
+      "name": "setApprovalForAll",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "safeTransferFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenURI",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "baseTokenURI",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "name": "isApprovedForAll",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "SolutionAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "approved",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "approved",
+          "type": "bool"
+        }
+      ],
+      "name": "ApprovalForAll",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "s",
+          "type": "string"
+        }
+      ],
+      "name": "Verified",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "name": "a",
+          "type": "uint256[2]"
+        },
+        {
+          "name": "b",
+          "type": "uint256[2][2]"
+        },
+        {
+          "name": "c",
+          "type": "uint256[2]"
+        },
+        {
+          "name": "input",
+          "type": "uint256[2]"
+        }
+      ],
+      "name": "addSolution",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
+```
+
+Verifier ABI:
+```
+"abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "s",
+          "type": "string"
+        }
+      ],
+      "name": "Verified",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "uint256[2]"
+        },
+        {
+          "name": "b",
+          "type": "uint256[2][2]"
+        },
+        {
+          "name": "c",
+          "type": "uint256[2]"
+        },
+        {
+          "name": "input",
+          "type": "uint256[2]"
+        }
+      ],
+      "name": "verifyTx",
+      "outputs": [
+        {
+          "name": "r",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
+```
+
+##### Interact with smartcontract
+
+* I use this https://oneclickdapp.com/
+* Enter smartcontract address (0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d)
+* Enter ABI Upper
+
+![Dapp](images/dapp.png)
+
+##### Mint token with MyEtherWallet
+* website here (https://www.myetherwallet.com/)
+* tutorial here (https://www.youtube.com/watch?v=8MChn-NJJB0)
+
+![myetherwallet1](images/myetherwallet1.png)
+
+##### Example of Mint-nft
+https://github.com/andresaaap/mint-ntf
+
+
+##### Mint.js
+
+* create different proof from zokrates
+* run mint.js
+```
+cd scripts
+node ./mint.js
+```
+* Mints record here
+https://rinkeby.etherscan.io/address/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d
+![Mint](images/mint.png)
+
+##### List on opensea
+* Ref: https://docs.opensea.io/docs/3-viewing-your-items-on-opensea
+* Ref: https://docs.opensea.io/docs/4-debugging-your-metadata
+* Ref: https://docs.opensea.io/docs/8-customizing-your-storefront
+
+* Open items on testnet.opensea.io
+```
+// Example
+https://testnets.opensea.io/assets/rinkeby/<asset_contract_address>/<token_id>
+
+// Collection here
+https://testnets.opensea.io/collection/bkk-land-token-v2
+
+// Items
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/1
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/2
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/3
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/4
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/5
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/7
+https://testnets.opensea.io/assets/rinkeby/0x9afD2040600375B9Dd8752F8b4F48Ff48A19986d/8
+```
+
+##### Purchase 
+* Ref: https://support.opensea.io/hc/en-us/articles/360063498333-How-do-I-sell-an-NFT-
+* Ref: https://support.opensea.io/hc/en-us/articles/360063518033-How-do-I-buy-fixed-price-NFTs-
+* Purchase address: https://rinkeby.etherscan.io/address/0xBB0dfaFc85C911238A833e637fCb5268A2D09D1f
+
+```
+// Transaction orders
+https://rinkeby.etherscan.io/tx/0x9ddeec3e14c7f792fd9ed0b5868433e8f28f8636a18278be4c3a7dd766a4dcf8
+https://rinkeby.etherscan.io/tx/0xf0dc1c4ee1433df1e1de9472c111d84ba3c896e26e70e465784fd671317cca9f
+https://rinkeby.etherscan.io/tx/0x88eeb79b68c038a020ee6cb3102a5bb1adb27a468c32e8c1b6ece4571c1b89c2
+https://rinkeby.etherscan.io/tx/0x2805629effdda50d7b8651a23794b5a5fd8f20c8de1bc727c7e6c1564fc9b08c
+https://rinkeby.etherscan.io/tx/0x53ebc16c5e285ead56e30c20b4c38a79ce5c06c325d77afc3a1f8a329ed50725
 ```
 
 # Project Resources

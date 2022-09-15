@@ -19,7 +19,7 @@
  */
 
 require('dotenv').config({ path: '../.env'});
-const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 const infuraKey = process.env.INFURA_KEY;
 const mnemonic = process.env.SECRET;
 // const infuraKey = "fj4jll3k.....";
@@ -52,10 +52,12 @@ module.exports = {
      },
 
     rinkeby: {
-      provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${infuraKey}`),
+      provider: () => new HDWalletProvider(mnemonic, `wss://rinkeby.infura.io/ws/v3/${infuraKey}`),
       network_id: 4,
       gas: 4500000,
-      gasPrice: 10000000000
+      gasPrice: 10000000000,
+      networkCheckTimeoutnetworkCheckTimeout: 100000000,
+      timeoutBlocks: 100000000
     },
 
     // Another network with more advanced options...
