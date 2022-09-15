@@ -11,23 +11,23 @@ solidity 0.5.1
 
 # Instruction
 
-Install dependencies
+##### Install dependencies
 ```
 npm install
 ```
 
-Compile contract
+##### Compile contract
 ```
 cd eth-contracts
 truffle compile
 ```
 
-Run blockchain simulation by this account for testing
+##### Run blockchain simulation by this account for testing
 ```bash
 ganache-cli -a 20 -l 9999999 -m "slice congress throw plastic rely coyote margin myself together manage romance actress"
 ```
 
-Run ZoKrates
+##### Run ZoKrates
 
 Ref here
 * (https://andresaaap.medium.com/creating-simple-zero-knowledge-verifier-contract-with-zokrates-0-5-0-solidity-0-5-0-13e9d615fe80)
@@ -48,11 +48,14 @@ cd code/square/
 ~/zokrates export-verifier
 ```
 
-Test
+![Zokrates](images/zokrates.png)
+
+##### Test
 ```
 truffle test
 ```
 
+![Test](images/test.png)
 
 
 # Project Resources
